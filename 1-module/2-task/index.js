@@ -10,11 +10,7 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-   if (name == null) {
-    return false;
-   }
-   const regex = /^\S{4,}$/;
-   return regex.test(name)
+   return !!name && !name.includes(' ') && name.length >= 4;
   }
   
 function sayHello() {
