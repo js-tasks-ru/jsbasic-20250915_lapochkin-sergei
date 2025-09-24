@@ -10,15 +10,20 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-  // ваш код...
-}
-
+   if (name == null) {
+    return false;
+   }
+   const regex = /^\S{4,}$/;
+   return regex.test(name)
+  }
+  
 function sayHello() {
   let userName = prompt('Введите ваше имя');
 
   if (isValid(userName)) {
     print(`Welcome back, ${userName}!`);
-  } else {
+  } 
+  else {
     print('Некорректное имя');
   }
 }
